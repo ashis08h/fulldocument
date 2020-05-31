@@ -1,0 +1,247 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>views module &mdash; fullthrottel  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="urls module" href="urls.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> fullthrottel
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="models.html">models module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin.html">admin module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="serializers.html">serializers module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="urls.html">urls module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">views module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#importing-requied-class-and-methods">Importing requied class and methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#comment-required">Comment Required</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Comment Required</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">fullthrottel</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>views module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/rst/views.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="views-module">
+<h1>views module<a class="headerlink" href="#views-module" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="importing-requied-class-and-methods">
+<h2>Importing requied class and methods<a class="headerlink" href="#importing-requied-class-and-methods" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">user_app.models</span> <span class="kn">import</span> <span class="n">UserDetails</span><span class="p">,</span><span class="n">ActivityPeriod</span>
+<span class="kn">from</span> <span class="nn">user_app.serializers</span> <span class="kn">import</span> <span class="n">UserDetailsSerializers</span><span class="p">,</span><span class="n">ActivityPeriodSerializers</span>
+<span class="hll"><span class="kn">from</span> <span class="nn">rest_framework</span> <span class="kn">import</span> <span class="n">viewsets</span>
+</span><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
+<span class="hll"><span class="kn">from</span> <span class="nn">faker</span> <span class="kn">import</span> <span class="n">Faker</span>
+</span></pre></div>
+</div>
+</div>
+<div class="section" id="comment-required">
+<h2>Comment Required<a class="headerlink" href="#comment-required" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">UserViewSet</span><span class="p">(</span><span class="n">viewsets</span><span class="o">.</span><span class="n">ModelViewSet</span><span class="p">):</span>
+             <span class="n">queryset</span> <span class="o">=</span> <span class="n">UserDetails</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<span class="hll">             <span class="n">serializer_class</span> <span class="o">=</span> <span class="n">UserDetailsSerializers</span>
+</span></pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Comment Required<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">population</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+             <span class="n">fakegen</span><span class="o">=</span><span class="n">Faker</span><span class="p">()</span>
+<span class="hll">             <span class="n">user_person</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Egon Spengler&#39;</span><span class="p">,</span> <span class="s1">&#39;Glinda Southgood&#39;</span><span class="p">,</span><span class="s1">&#39;Joshua Mason&#39;</span><span class="p">,</span><span class="s1">&#39;Ashish Kumar&#39;</span><span class="p">]</span>
+</span>             <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">user_person</span><span class="p">:</span>
+<span class="hll">                     <span class="n">fake_start_time</span><span class="o">=</span><span class="n">fakegen</span><span class="o">.</span><span class="n">date_time</span><span class="p">()</span>
+</span>                     <span class="n">fake_end_time</span><span class="o">=</span><span class="n">fakegen</span><span class="o">.</span><span class="n">date_time</span><span class="p">()</span>
+                     <span class="n">fake_country</span><span class="o">=</span><span class="n">fakegen</span><span class="o">.</span><span class="n">timezone</span><span class="p">()</span>
+                     <span class="k">try</span><span class="p">:</span>
+                             <span class="n">user_details</span><span class="o">=</span><span class="n">UserDetails</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">real_name</span> <span class="o">=</span> <span class="n">item</span><span class="p">)</span>
+                     <span class="k">except</span> <span class="n">UserDetails</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">:</span>
+                             <span class="n">user_details</span><span class="o">=</span><span class="n">UserDetails</span><span class="p">(</span><span class="n">real_name</span> <span class="o">=</span> <span class="n">item</span><span class="p">,</span><span class="n">tz</span> <span class="o">=</span> <span class="n">fake_country</span><span class="p">)</span>
+                             <span class="n">user_details</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+                     <span class="n">popactivity</span><span class="o">=</span><span class="n">ActivityPeriod</span><span class="p">(</span><span class="n">user_id</span><span class="o">=</span><span class="n">user_details</span><span class="p">,</span><span class="n">start_time</span><span class="o">=</span><span class="n">fake_start_time</span><span class="p">,</span> <span class="n">end_time</span><span class="o">=</span><span class="n">fake_end_time</span><span class="p">)</span>
+                     <span class="n">popactivity</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+     <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s2">&quot;your database is populated with dumy data.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="urls.html" class="btn btn-neutral float-left" title="urls module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Ashish Kumar
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
